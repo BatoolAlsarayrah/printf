@@ -18,7 +18,7 @@ $(NAME): $(OBJS) $(LIBFt)
 	$(AR) $(NAME) $(OBJS)
 
 $(LIBFt):
-	$(MAKE) -C libft
+	make -C libft
 
 clean:
 	$(RM) $(OBJS)
