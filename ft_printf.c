@@ -6,13 +6,13 @@
 /*   By: balsaray <balsaray@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/16 11:39:02 by balsaray          #+#    #+#             */
-/*   Updated: 2026/10/17 14:41:33 by balsaray         ###   ########.fr       */
+/*   Updated: 2026/10/18 11:40:56 by balsaray         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	check_type(char c, va_list *list)
+static int	check_type(char c, va_list *list)
 {
 	int	count;
 
@@ -39,6 +39,27 @@ int	check_type(char c, va_list *list)
 		count += ft_putchar('%');
 	return (count);
 }
+static int	formatcheck(const char *format)
+{
+	int	i;
+
+	i = 0;
+	while (format[i])
+	{
+		if (format[i] == '%')
+		{
+			i++;
+			if (format[i] != 'c' && format[i] != 's' && format[i] != 'd'
+				&& format[i] != 'i' && format[i] != 'x' && format[i] != 'X'
+				&& format[i] != 'u' && format[i] != '%' && format[i] != 'p')
+				return (0);
+			i++;
+		}
+		else
+			i++;
+	}
+	return (1);
+}
 
 int	ft_printf(const char *format, ...)
 {
@@ -48,6 +69,8 @@ int	ft_printf(const char *format, ...)
 
 	if (!format)
 		return (-1);
+	if (!formatcheck(format))
+		return (-1);
 	va_start(list, format);
 	count = 0;
 	i = 0;
@@ -56,13 +79,11 @@ int	ft_printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			i++;
-			count += check_type(format[i], &list);
-			i++;
+			count += check_type(format[i++], &list);
 		}
 		else
 		{
-			count += ft_putchar(format[i]);
-			i++;
+			count += ft_putchar(format[i++]);
 		}
 	}
 	va_end(list);
