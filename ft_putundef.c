@@ -12,9 +12,9 @@
 
 #include "ft_printf.h"
 
-int ft_putundef(char c)
+int	ft_putundef(char c)
 {
-	int count;
+	int	count;
 
 	count = 0;
 	count += ft_putchar('%');

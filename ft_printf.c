@@ -6,7 +6,7 @@
 /*   By: balsaray <balsaray@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/16 11:39:02 by balsaray          #+#    #+#             */
-/*   Updated: 2026/10/18 15:25:27 by balsaray         ###   ########.fr       */
+/*   Updated: 2026/10/19 12:13:36 by balsaray         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,11 @@ static int	check_type(char c, va_list *list)
 		count += ft_putundef(c);
 	return (count);
 }
-static int format_check(const char *format, va_list *list)
+
+static int	format_check(const char *format, va_list *list)
 {
-	int		count;
-	int		i;
+	int	count;
+	int	i;
 
 	count = 0;
 	i = 0;
@@ -63,6 +64,7 @@ static int format_check(const char *format, va_list *list)
 	}
 	return (count);
 }
+
 int	ft_printf(const char *format, ...)
 {
 	va_list	list;
