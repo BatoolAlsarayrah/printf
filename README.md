@@ -98,6 +98,7 @@ Since `printf` is buffered and `ft_printf` is not, each test line should end wit
 | `ft_putnbr_base` | Writes an `unsigned long` in any base, given as a string of digits. Returns the number of digits written. |
 | `ft_putnbr_dec` | Writes a signed `int` in base 10, with a `-` sign when negative. |
 | `ft_putptr` | Writes a pointer as `0x` followed by its address in lowercase hexadecimal, or `(nil)`. |
+| `ft_putundef | Writes % followed by an unknown specifier character. Returns 2. I’d also add one line under “Format parsing”: a format that ends in a single % returns -1`. |
 
 ## Algorithm and data structure
 

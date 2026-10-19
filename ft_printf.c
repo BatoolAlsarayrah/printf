@@ -6,7 +6,7 @@
 /*   By: balsaray <balsaray@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/16 11:39:02 by balsaray          #+#    #+#             */
-/*   Updated: 2026/10/19 12:13:36 by balsaray         ###   ########.fr       */
+/*   Updated: 2026/10/19 15:34:56 by balsaray         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,10 +53,7 @@ static int	format_check(const char *format, va_list *list)
 		{
 			i++;
 			if (i == (int)ft_strlen(format))
-			{
-				va_end(*list);
 				return (-1);
-			}
 			count += check_type(format[i++], list);
 		}
 		else
@@ -79,6 +76,6 @@ int	ft_printf(const char *format, ...)
 }
 // int main()
 // {
-// 	int i = printf("batool %k dyg");
+// 	int i = ft_printf("batool %");
 // 	printf("\n%d", i);
 // }
