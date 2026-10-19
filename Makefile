@@ -6,7 +6,7 @@ AR			= ar rcs
 RM			= rm -f
 
 SRCS		= ft_printf.c ft_putchar.c ft_putnbr_base.c ft_putstr.c \
-			  ft_putnbr_dec.c ft_putptr.c
+			  ft_putnbr_dec.c ft_putptr.c ft_putundef.c
 
 OBJS		= $(SRCS:.c=.o)
 LIBFt		= libft/libft.a
