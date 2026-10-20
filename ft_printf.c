@@ -6,7 +6,7 @@
 /*   By: balsaray <balsaray@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/16 11:39:02 by balsaray          #+#    #+#             */
-/*   Updated: 2026/10/19 15:34:56 by balsaray         ###   ########.fr       */
+/*   Updated: 2026/10/20 10:17:50 by balsaray         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,8 @@ int	ft_printf(const char *format, ...)
 }
 // int main()
 // {
-// 	int i = ft_printf("batool %");
-// 	printf("\n%d", i);
+// 	int i = ft_printf("hello %k world");
+// 	printf("\nstd: ");
+// 	int r = printf("hello %k world");
+// 	printf("\n%d\nstd: %d", i, r);
 // }
