@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-int	ft_putnbr_base(unsigned long n, char *base)
+int	ft_putnbr_base(unsigned long long n, char *base)
 {
 	char			res;
 	unsigned long	base_size;

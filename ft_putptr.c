@@ -23,7 +23,7 @@ int	ft_putptr(void *ptr)
 		return (5);
 	}
 	i += ft_putstr("0x");
-	i += ft_putnbr_base((unsigned long)ptr, "0123456789abcdef");
+	i += ft_putnbr_base((unsigned long long)ptr, "0123456789abcdef");
 	return (i);
 }
 // int	main(void)
