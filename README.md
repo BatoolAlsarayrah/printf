@@ -95,7 +95,7 @@ Since `printf` is buffered and `ft_printf` is not, each test line should end wit
 | `check_type` | Reads the next argument with `va_arg` using the correct type and calls the matching print function. |
 | `ft_putchar` | Writes one character. Returns `1`. |
 | `ft_putstr` | Writes a string, or `(null)` if it is `NULL`. Returns its length. |
-| `ft_putnbr_base` | Writes an `unsigned long` in any base, given as a string of digits. Returns the number of digits written. |
+| `ft_putnbr_base` | Writes an `unsigned long long` in any base, given as a string of digits. Returns the number of digits written. |
 | `ft_putnbr_dec` | Writes a signed `int` in base 10, with a `-` sign when negative. |
 | `ft_putptr` | Writes a pointer as `0x` followed by its address in lowercase hexadecimal, or `(nil)`. |
 | `ft_putundef` | Writes `%` followed by an unknown specifier character. Returns `2`. |
@@ -134,7 +134,7 @@ All numbers are printed by one recursive function, `ft_putnbr_base`, adapted fro
 - The **base string** contains the digits in order (`"0123456789"`, `"0123456789abcdef"`, `"0123456789ABCDEF"`). Its length is the base, and each digit's value is its index, so `base[n % length]` gives the character to print directly.
 - `n % length` gives the last digit and `n / length` removes it. This produces the digits backwards, so the function **calls itself first** with `n / length` and prints its own digit after the recursive call returns. This puts the digits back in the correct order.
 - Each call returns the count from the recursive call plus one for its own digit.
-- The parameter is an `unsigned long` so the same function can print pointer addresses (8 bytes) as well as `unsigned int` values.
+- The parameter is an `unsigned long long` so the same function can print pointer addresses (8 bytes) as well as `unsigned int` values.
 
 `%u`, `%x` and `%X` call it directly. `ft_putnbr_dec` handles the sign: it stores the `int` in a `long` before negating it, because `-INT_MIN` does not fit in an `int`. `ft_putptr` adds the `0x` prefix.
 
